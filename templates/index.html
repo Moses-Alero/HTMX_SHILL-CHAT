@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTMX CHAT APP</title>
+        <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}"> 
+        <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/htmx.org/dist/ext/ws.js"></script>
+    </head>
+    <body>
+        <div class="header">
+           <img src="logo.png" alt="Logo">
+           <h1>HTMX Chat Room</h1>
+        </div>
+        <div class="form_div">
+          <form id="input_form" 
+              hx-get="/chat" 
+              hx-trigger="click from:#submit"
+              hx-target="form"
+              hx-swap="outerHTML" >
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="chatroom">Chat Room:</label><br>
+            <input type="text" id="chatroom" name="chatroom" required><br>
+            <input type="submit" id="submit" value="Join">
+        </form>
+
+        </div>  
+    </body>
+</html>
+
