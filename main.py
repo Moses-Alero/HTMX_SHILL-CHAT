@@ -48,7 +48,7 @@ def received_message(message, username):
     return f"""
             <div id="message"  hx-swap-oob="beforeend">
                 <div class="message other">
-                    <span>{username}</span>
+                    <span style="color: #000000">~{username}</span>
                     {message}
                 </div>
             </div>"""
